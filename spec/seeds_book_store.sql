@@ -6,3 +6,5 @@ INSERT INTO "public"."books" ("id", "title", "author_name") VALUES
 (3, 'Emma', 'Jane Austen'),
 (4, 'Dracula', 'Bram Stoker'),
 (5, 'The Age of Innocence', 'Edith Wharton');
+
+
