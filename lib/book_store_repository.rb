@@ -33,12 +33,12 @@ class BooksRepository
     sql = "INSERT INTO books
       ( id, title, author_name )
       VALUES( '#{all[-1].id.to_i + 1}', '#{title}', '#{author_name}');"
-      DatabaseConnection.exec_params(sql, [])
+      DatabaseConnection.exec_params(sql, []) if search_for(author_name).empty? || search_for(title).empty?
   end
 
   def delete(id)
     sql = "DELETE FROM books WHERE id = '#{id}';"
-    DatabaseConnection.exec_params(sql, [])
+    DatabaseConnection.exec_params(sql, []) 
   
   end
 

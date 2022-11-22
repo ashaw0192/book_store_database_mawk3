@@ -53,6 +53,16 @@ RSpec.describe BooksRepository do
     expect(shelf[-1].author_name).to eq 'Author 1'
   end
 
+  it "doesn't include a book already exists and is added a second time" do
+    repo = BooksRepository.new
+
+    repo.create("Dracula", "Dracula")
+
+    shelf = repo.all
+    expect(shelf.length).to eq 5
+    expect(shelf[-1].id).to eq '5'
+  end
+
   it "removes a book by id" do
     repo = BooksRepository.new
     repo.delete(3)
